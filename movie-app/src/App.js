@@ -1,5 +1,7 @@
+
 import React from 'react';
 import Favourites from './components/Favourites';
+import SearchBar from './components/SearchBar;
 
 function App() {
   return (
@@ -7,6 +9,8 @@ function App() {
    <div>
      <Favourites/>
    </div>
+    <div>
+    <SearchBar/>
   );
 }
 
