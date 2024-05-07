@@ -1,14 +1,10 @@
-
-
-  
-
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieList from './components/MovieList';
 import Favourites from './components/Favourites';
 import SearchBar from './components/SearchBar;
-
+import MovieHeader from './components/MovieHeader';
 
 const App = () => {
   const [movies, setMovies] = useState([{
@@ -82,7 +78,14 @@ const App = () => {
     "Poster": "https://m.media-amazon.com/images/M/MV5BMTFmZjVjNjYtNTYyZS00Yzg3LWI5MmItMDJiNThhMDZlNDc5XkEyXkFqcGdeQXVyMzU1ODg2NDg@._V1_SX300.jpg"
   }]);
   return (
-    <div >
+    <div>
+        <div>
+     < MovieHeader />
+    </div>
+        <div>
+    <SearchBar/>
+    </div>
+    
       <div >
         <MovieList movies={movies}/>
       
@@ -90,17 +93,12 @@ const App = () => {
  <div>
      <Favourites/>
    </div>
-    <div>
-    <SearchBar/>
-    </div>
-    
-      
+
+   
     </div>
   )
 }
 export default App;
-
-
 
 
 
