@@ -1,10 +1,14 @@
 
+
   
 
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieList from './components/MovieList';
+import Favourites from './components/Favourites';
+import SearchBar from './components/SearchBar;
+
 
 const App = () => {
   const [movies, setMovies] = useState([{
@@ -83,8 +87,20 @@ const App = () => {
         <MovieList movies={movies}/>
       
       </div>
+ <div>
+     <Favourites/>
+   </div>
+    <div>
+    <SearchBar/>
+    </div>
+    
       
     </div>
   )
 }
-export default App
+export default App;
+
+
+
+
+

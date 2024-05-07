@@ -1,5 +1,6 @@
 
 
+
 import React from "react";
 
 const MovieList = (props) =>{
@@ -13,4 +14,4 @@ const MovieList = (props) =>{
     </>
   )
 }
- export default MovieList
+ export default MovieList;
