@@ -1,9 +1,9 @@
 import React from 'react'
 
-const MovieListHeading = () => {
+const MovieListHeading = (props) => {
   return (
     <div>
-        <h1></h1>
+        <h1>{props.heading}</h1>
     </div>
   );
 }
