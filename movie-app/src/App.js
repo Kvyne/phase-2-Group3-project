@@ -2,7 +2,7 @@ import MovieHeader from './components/MovieHeader'
 function App() {
   return (
     <div>
-     < MovieHeader />
+     < MovieHeader heading = 'Movies' />
     </div>
   );
 }
