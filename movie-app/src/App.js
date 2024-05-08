@@ -9,19 +9,21 @@ import MovieHeader from './components/MovieHeader';
 
 const App =  () => {
   const [movies, setMovies] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
   
-  const getMovieRequest =async ()=> {
-    const URL = 'http://www.omdbapi.com/?s=movies&apikey=114372bb';
+  const getMovieRequest =async (searchValue)=> {
+    const URL = `http://www.omdbapi.com/?s=${searchValue}&apikey=114372bb`;
     const response= await fetch(URL);
     const responseJson = await response.json();
+    if (responseJson.Search)
 
     setMovies(responseJson.Search)
   };
 
 
 useEffect(()=>{
-  getMovieRequest()
-},[]);
+  getMovieRequest(searchValue)
+},[searchValue]);
 
 
 
@@ -32,7 +34,7 @@ useEffect(()=>{
      < MovieHeader heading = 'Movies'/>
     </div>
         <div>
-    <SearchBar/>
+    <SearchBar searchValue = {searchValue} setSearchValue = {setSearchValue}/>
     </div>
     
       <div >
