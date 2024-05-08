@@ -6,6 +6,7 @@ import Favourites from './components/Favourites';
 import SearchBar from './components/SearchBar';
 import MovieHeader from './components/MovieHeader';
 
+
 const App =  () => {
   const [movies, setMovies] = useState([]);
   
@@ -35,7 +36,8 @@ useEffect(()=>{
     </div>
     
       <div >
-        <MovieList movies={movies}/>
+        <MovieList movies={movies} FavouritesComponent= {Favourites}/>
+
       
       </div>
  <div>
