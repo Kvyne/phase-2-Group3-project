@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieList from './components/MovieList';
-import Favourites from './components/Favourites';
 import SearchBar from './components/SearchBar';
 import MovieHeader from './components/MovieHeader';
+import Favourites from './components/Favourites';
+
+
 
 
 const App =  () => {
   const [movies, setMovies] = useState([]);
+  const [Favourites, setFavourites] = useState([])
   const [searchValue, setSearchValue] = useState('');
   
   const getMovieRequest =async (searchValue)=> {
@@ -25,6 +28,12 @@ useEffect(()=>{
   getMovieRequest(searchValue)
 },[searchValue]);
 
+const addFavouriteMovie =(movie)=>{
+  const newFavouriteList =[...Favourites, movie];
+  setFavourites(newFavouriteList)
+}
+
+
 
 
   
@@ -38,7 +47,9 @@ useEffect(()=>{
     </div>
     
       <div >
-        <MovieList movies={movies} FavouritesComponent= {Favourites}/>
+        <MovieList movies={movies} 
+        handleFavouritesClick ={addFavouriteMovie}
+         FavouriteComponent= {Favourites}/>
 
       
       </div>
