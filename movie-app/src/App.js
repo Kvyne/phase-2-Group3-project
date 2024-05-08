@@ -4,64 +4,81 @@ import './App.css';
 import MovieList from './components/MovieList';
 import SearchBar from './components/SearchBar';
 import MovieHeader from './components/MovieHeader';
-import Favourites from './components/Favourites';
+import AddFavourites from './components/AddFavourites';
+import RemoveFavourites from './components/RemoveFavourites';   
 
 
-
-
-const App =  () => {
+const App = () => {
   const [movies, setMovies] = useState([]);
-  const [Favourites, setFavourites] = useState([])
+  const [favourites, setFavourites] = useState([]);
   const [searchValue, setSearchValue] = useState('');
-  
-  const getMovieRequest =async (searchValue)=> {
-    const URL = `http://www.omdbapi.com/?s=${searchValue}&apikey=114372bb`;
-    const response= await fetch(URL);
-    const responseJson = await response.json();
-    if (responseJson.Search)
 
-    setMovies(responseJson.Search)
+  const getMovieRequest = async (searchValue) => {
+    const URL = `http://www.omdbapi.com/?s=${searchValue}&apikey=114372bb`;
+    const response = await fetch(URL);
+    const responseJson = await response.json();
+    if (responseJson.Search) {
+      setMovies(responseJson.Search);
+    }
   };
 
+  useEffect(() => {
+    getMovieRequest(searchValue);
+  }, [searchValue]);
 
-useEffect(()=>{
-  getMovieRequest(searchValue)
-},[searchValue]);
+  useEffect(() => {
+    const movieFavourites = JSON.parse(
+      localStorage.getItem('react-movie-app-favourites')
+    );
+    setFavourites(movieFavourites);
+  }, []);
 
-const addFavouriteMovie =(movie)=>{
-  const newFavouriteList =[...Favourites, movie];
-  setFavourites(newFavouriteList)
-}
+  const saveToLocalStorage = () => {
+    localStorage.setItem('favourites', JSON.stringify(favourites));
+  };
+  const addFavouriteMovie = (movie) => {
+    const newFavouriteList = [...favourites, movie];
+    setFavourites(newFavouriteList);
+    saveToLocalStorage(newFavouriteList);
+  };
 
+  const removeFavouriteMovie = (movie) => {
+    const newFavouriteList = favourites.filter(
+      (favourite) => favourite.imdbID !== movie.imdbID);
+      
+    setFavourites(newFavouriteList);
+    saveToLocalStorage(newFavouriteList);
+  };
 
-
-
-  
   return (
     <div>
-        <div>
-     < MovieHeader heading = 'Movies'/>
-    </div>
-        <div>
-    <SearchBar searchValue = {searchValue} setSearchValue = {setSearchValue}/>
-    </div>
-    
-      <div >
-        <MovieList movies={movies} 
-        handleFavouritesClick ={addFavouriteMovie}
-         FavouriteComponent= {Favourites}/>
-
-      
+      <div>
+        <MovieHeader heading="Movies" />
       </div>
- <div>
-     <Favourites/>
-   </div>
+      <div>
+        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+      </div>
 
-   
+      <div>
+        <MovieList
+          movies={movies}
+          handleFavouritesClick={addFavouriteMovie}
+          favouriteComponent={AddFavourites}
+        />
+      </div>
+      
+      <div>
+        <MovieHeader heading="Favourites" />
+      </div>
+      <div>
+        <MovieList
+          movies={favourites}
+          handleFavouritesClick={removeFavouriteMovie}
+          favouriteComponent={RemoveFavourites}
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
+
 export default App;
-
-
-

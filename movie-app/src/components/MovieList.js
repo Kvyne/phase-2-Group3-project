@@ -1,20 +1,20 @@
+import React from 'react';
 
-import React from "react";
+const MovieList = (props) => {
+  const FavouriteComponent = props.favouriteComponent;
 
-
-const MovieList = (props) =>{
-  const FavouritesComponent = props.FavouritesComponent
-  return(
+  return (
     <>
-    {props.movies.map((movie, index)=>
-    <div >
-      <img src={movie.Poster} alt ="movie"></img>
-      <div onClick={props.handleFavouriteClick}/>
-      <FavouritesComponent/>
-      
-    </div>
-)}
+      {props.movies.map((movie, index) => (
+        <div>
+          <img src={movie.Poster} alt="movie" />
+          <div onClick={() => props.handleFavouritesClick(movie)}>
+            <FavouriteComponent />
+          </div>
+        </div>
+      ))}
     </>
-  )
-}
- export default MovieList;
+  );
+};
+
+export default MovieList; 
