@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieList from './components/MovieList';
 import Favourites from './components/Favourites';
-import SearchBar from './components/SearchBar;
+import SearchBar from './components/SearchBar';
 import MovieHeader from './components/MovieHeader';
 
 const App = () => {
@@ -80,7 +80,7 @@ const App = () => {
   return (
     <div>
         <div>
-     < MovieHeader />
+     < MovieHeader heading = 'Movies'/>
     </div>
         <div>
     <SearchBar/>
