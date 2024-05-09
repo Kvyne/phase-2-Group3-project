@@ -19,7 +19,8 @@ body {
   position: relative;
   width: 150px; 
   transition: transform 0.3s ease-in-out; 
-  
+
+
 }
 
 .movie-container:hover {
@@ -34,9 +35,12 @@ body {
   height: auto;
   border-radius: 5px;
 }
+.add-to-favourites {
+  color: white;}
 
-
-
+  .remove-from-favourites {
+    color: white; 
+  }
 
 
 
