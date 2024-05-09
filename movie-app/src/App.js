@@ -56,7 +56,7 @@ const App = () => {
 
   
   return (
-    <div>
+    <div className='container-fluid'>
       <div>
         <MovieHeader heading="Movies" />
       </div>
