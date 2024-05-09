@@ -31,9 +31,9 @@ const App = () => {
       localStorage.getItem('react-movie-app-favourites')
     );
     if (movieFavourites) {
-      setFavourites(movieFavourites);}
-      
-    },[]);
+      setFavourites(movieFavourites);
+    }
+  }, []);
   const saveToLocalStorage = (items) => {
     localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
   };
@@ -50,7 +50,7 @@ const App = () => {
     );
       
     setFavourites(newFavouriteList);
-
+    saveToLocalStorage(newFavouriteList);
   };
   
 
