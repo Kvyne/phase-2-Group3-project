@@ -6,7 +6,7 @@ const MovieList = (props) => {
   return (
     <>
       {props.movies.map((movie, index) => (
-        <div>
+        <div className="movie-container" key={index}>
           <img src={movie.Poster} alt="movie" />
           <div onClick={() => props.handleFavouritesClick(movie)}>
             <FavouriteComponent />
@@ -17,4 +17,4 @@ const MovieList = (props) => {
   );
 };
 
-export default MovieList; 
+export default MovieList;
