@@ -63,19 +63,23 @@ const App = () => {
       <div>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
+     
 
-      <div>
+     <div className='container-fluid movie-app' >
+     <div className='row'>
         <MovieList
           movies={movies}
           handleFavouritesClick={addFavouriteMovie}
           favouriteComponent={AddFavourites}
         />
       </div>
+     </div>
+      
       
       <div>
         <MovieHeader heading="Favourites" />
       </div>
-      <div>
+      <div className='row'>
         <MovieList
           movies={favourites}
           handleFavouritesClick={removeFavouriteMovie}
