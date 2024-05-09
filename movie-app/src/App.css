@@ -1,6 +1,8 @@
-body {
-  background-color: black;
+body{
+  background: #141414;
+  color: #ffffff
 }
+
 .search-bar {
   width: 100%;
   max-width: 400px;
@@ -19,7 +21,8 @@ body {
   position: relative;
   width: 150px; 
   transition: transform 0.3s ease-in-out; 
-  
+
+
 }
 
 .movie-container:hover {
@@ -34,9 +37,23 @@ body {
   height: auto;
   border-radius: 5px;
 }
+.add-to-favourites {
+  color: white;}
 
+  .remove-from-favourites {
+    color: white; 
+  }
 
-
-
-
+.movie-app > .row{
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+movie-app > .row > .movie-item {
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
 
