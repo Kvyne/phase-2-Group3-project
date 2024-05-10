@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieList from './components/MovieList';
@@ -7,6 +8,7 @@ import MovieHeader from './components/MovieHeader';
 import AddFavourites from './components/AddFavourites';
 import RemoveFavourites from './components/RemoveFavourites';
 import NavBar from './components/NavBar';
+
 
 
 
@@ -57,6 +59,8 @@ const App = () => {
   };
   
   return (
+    
+    
     <div className='container-fluid'>
       <NavBar /> {/* Include the NavBar component */}
       <div>
