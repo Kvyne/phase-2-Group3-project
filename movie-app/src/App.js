@@ -10,6 +10,7 @@ import NavBar from './components/NavBar';
 
 
 
+
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState([]);
@@ -57,6 +58,8 @@ const App = () => {
   };
   
   return (
+    
+    
     <div className='container-fluid'>
       <NavBar /> {/* Include the NavBar component */}
       <div>
