@@ -11,6 +11,9 @@ background-size: cover;
   width: 100%;
   max-width: 400px;
   margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  
 }
 
 .search-bar input[type="text"] {
@@ -19,6 +22,7 @@ background-size: cover;
   font-size: 16px;
   border: 1px solid #ccc; 
   border-radius: 5px;
+  background-color: rgba(125, 127, 129, 0.901);
 }
 
 .movie-container {
@@ -60,4 +64,5 @@ movie-app > .row > .movie-item {
   box-sizing: border-box;
   margin-right: 10px;
 }
+
 
