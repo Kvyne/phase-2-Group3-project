@@ -1,6 +1,5 @@
 import React from 'react';
-
-const Favourites = () => {
+function Favourites(){
   return (
     <>
       <span className="add-to-favourites">Add to Favourites</span>
