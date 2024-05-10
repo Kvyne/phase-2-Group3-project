@@ -1,12 +1,19 @@
 body{
-  background: #141414;
-  color: #ffffff
+
+  color: #ffffff;
+background-image: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtbWlzYzYtdGVkMzEwNS10ZWRkeS5qcGc.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+
 }
 
 .search-bar {
   width: 100%;
   max-width: 400px;
   margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  
 }
 
 .search-bar input[type="text"] {
@@ -15,6 +22,7 @@ body{
   font-size: 16px;
   border: 1px solid #ccc; 
   border-radius: 5px;
+  background-color: rgba(125, 127, 129, 0.901);
 }
 
 .movie-container {
@@ -56,4 +64,5 @@ movie-app > .row > .movie-item {
   box-sizing: border-box;
   margin-right: 10px;
 }
+
 

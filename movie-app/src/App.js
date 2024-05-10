@@ -5,7 +5,10 @@ import MovieList from './components/MovieList';
 import SearchBar from './components/SearchBar';
 import MovieHeader from './components/MovieHeader';
 import AddFavourites from './components/AddFavourites';
-import RemoveFavourites from './components/RemoveFavourites';   
+import RemoveFavourites from './components/RemoveFavourites';
+import NavBar from './components/NavBar';
+
+
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -53,10 +56,9 @@ const App = () => {
     saveToLocalStorage(newFavouriteList);
   };
   
-
-  
   return (
-    <div>
+    <div className='container-fluid'>
+      <NavBar /> {/* Include the NavBar component */}
       <div>
         <MovieHeader heading="Movies" />
       </div>
@@ -91,3 +93,4 @@ const App = () => {
 };
 
 export default App;
+
