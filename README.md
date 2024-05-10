@@ -30,6 +30,10 @@ INSTALLATION:
    -Start the development server using npm start.
    -Open your browser and go to http://localhost:3000.      
 
+   ## live link
+   [our application] ('https://phase-2-group3-project-5qtr.vercel.app/')
+
+
 USAGE:
  -Browse movies: Simply scroll through the catalog of movies to discover new titles.
  -Search movies: Use the search bar to find movies by title.
